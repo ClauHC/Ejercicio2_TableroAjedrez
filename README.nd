@@ -1,1 +1,8 @@
-My project
+Second class project for Structured Programming with JAVA language. Chess board
+
+Description:
+
+Write a Java program that prints a chessboard given a pattern defined by a specific character and the size of each square.
+The program should:
+• Prompt the user for the character to use as a pattern. It can be a letter, a number or even a symbol.
+• Ask the user for the size of the square (1<=size<=15).
