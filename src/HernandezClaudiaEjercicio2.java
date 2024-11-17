@@ -24,7 +24,7 @@ public class HernandezClaudiaEjercicio2 {
         String simbolo = "";
         int size = 0;
 
-
+        // Solicitar al usuario el carácter que usar como patrón. Puede ser una letra, un número o incluso un símbolo.
         do {
             System.out.println("Dime que patrón quieres para tu tablero. Puede ser una letra, un número o incluso un símbolo.");
             if (input.hasNextLine()){
@@ -41,13 +41,14 @@ public class HernandezClaudiaEjercicio2 {
             }
         } while (simbolo == "");
 
+        //Solicitar al usuario el tamaño de la casilla (1<=size<=15)*
         do {
             System.out.println("Ahora dime de qué tamaño quieres la casilla. Tiene que ser un número entero, diferente de cero, positivo y no mayor de " + MAYOR);
             if (input.hasNextInt()){
                 size = input.nextInt();
                 input.nextLine();
                 if (size < 1 || size > MAYOR) {
-                    System.out.println("Selección no válida. Debes elegir un número menor de " + MAYOR);
+                    System.out.println("Selección no válida. Debes elegir un número positivo y no mayor de " + MAYOR);
                     size = 0;
                 } else {
                     System.out.println("Tenemos una casilla de " + size);
@@ -58,7 +59,10 @@ public class HernandezClaudiaEjercicio2 {
             }
         } while (size == 0);
 
+        //Generar tablero
         for (int i =0; i<TOPE_TABLERO; i++) {
+
+            //La primera fila del tablero empieza por casillas blancas
             for (int j =0; j<TOPE_TABLERO; j++) {
                 System.out.print("|" );
                 for (int blancas =0; blancas<size; blancas++){
@@ -71,6 +75,7 @@ public class HernandezClaudiaEjercicio2 {
             }
             System.out.println("|");
 
+            //La segunda fila del tablero empieza por casillas negras
             for (int j =0; j<TOPE_TABLERO; j++) {
                 System.out.print("|");
                 for (int negras =0; negras<size; negras++){
@@ -84,6 +89,7 @@ public class HernandezClaudiaEjercicio2 {
             System.out.println("|");
         }
 
-        System.out.println("Así luce tu tablero. Espero que lo disfrutes");
+        //Avisamos al usuario que el programa ha termiando y se va a cerrar
+        System.out.println("Así luce tu tablero, espero que lo disfrutes. ¡Hasta la próxima!");
     }
 }
